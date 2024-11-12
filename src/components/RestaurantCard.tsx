@@ -1,4 +1,3 @@
-// src/components/RestaurantCard.tsx
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -8,7 +7,7 @@ interface RestaurantCardProps {
   title: string;
   description: string;
   rating: number;
-  category: string; // Adicione a categoria aqui
+  category: string;
 }
 
 const Card = styled.div`
