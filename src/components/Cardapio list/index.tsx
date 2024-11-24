@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
-import { Card, Descricao, Titulo, Infos, AddToCartButton, Modal, ModalContent } from './styles';
+import { Card, Descricao, Titulo, Modal, ModalContent, AddToCartButton } from './styles';
 import { useState } from 'react';
 import fechar from '../../assets/fechar.png';
+import { useDispatch } from 'react-redux';
+import { add,open } from '../store/reducers/cart';
 
 type Props = {
   porcao: string;
@@ -20,6 +22,14 @@ const Product: React.FC<Props> = ({
   id,
   nome,
 }) => {
+  const dispatch = useDispatch();
+
+  const addCart = () => {
+    dispatch(add({ porcao, foto, preco, id, nome, descricao }));
+    dispatch(open())
+    closeModal()
+  };
+
   const [modalItem, setModalItem] = useState<Props | null>(null);
 
   const openModal = () => {
@@ -37,23 +47,34 @@ const Product: React.FC<Props> = ({
   return (
     <Card key={id}>
       <img src={foto} alt={nome || 'Product Image'} />
-      <div style={{padding:'15px'}}>
+      <div style={{ padding: '15px' }}>
         <Titulo>{nome}</Titulo>
-        <Descricao>{getDescricao(descricao)}</Descricao> 
-        <button type='button' style={{padding:'10px', width:'100%'}} onClick={openModal}>Adicionar ao carrinho</button>
+        <Descricao>{getDescricao(descricao)}</Descricao>
+        <button
+          type="button"
+          style={{ padding: '10px', width: '100%' }}
+          onClick={openModal}
+        >
+          Adicionar ao carrinho
+        </button>
       </div>
-      {/* <Link className='button' to={`/profile/${id}`}>Saiba mais</Link> */}
-      
       {modalItem && (
         <Modal>
           <ModalContent>
             <img src={modalItem.foto} alt={modalItem.nome} />
             <div>
-              <img className="fechar" src={fechar} alt="Fechar" onClick={closeModal} />
+              <img
+                className="fechar"
+                src={fechar}
+                alt="Fechar"
+                onClick={closeModal}
+              />
               <h4>{modalItem.nome}</h4>
               <p>{modalItem.descricao}</p>
               <p>Serve: {modalItem.porcao}</p>
-              <AddToCartButton>Adicionar ao carrinho - R${modalItem.preco}</AddToCartButton>
+              <AddToCartButton onClick={addCart}>
+                Adicionar ao carrinho - R${modalItem.preco}
+              </AddToCartButton>
             </div>
           </ModalContent>
           <div className="overlay" onClick={closeModal}></div>

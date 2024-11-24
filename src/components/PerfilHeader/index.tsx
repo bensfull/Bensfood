@@ -7,6 +7,11 @@ import { Dish } from "../../pages/Profile";
 import image from '../../assets/fundo.svg'
 import logo from '../../assets/logo (1).svg'
 import banner from '../../assets/banner.svg'
+import { useDispatch, useSelector } from "react-redux";
+import { RootReducer } from "../store";
+
+
+import { open } from "../store/reducers/cart";
 
 const HeaderContainer = styled.header`  
   background-image:url(${image});
@@ -66,6 +71,14 @@ export interface Restaurant {
   }
 
 const Header: React.FC = () => {
+  const  dispacth = useDispatch()
+  const {items} = useSelector((state: RootReducer) => state.cart)
+
+  const openCart =() => {
+    dispacth(open())
+    
+  }
+
     const { id } = useParams<{ id: string }>();
     const [restaurant, setRestaurant] = useState<Restaurant | null>(null);
   
@@ -84,8 +97,8 @@ const Header: React.FC = () => {
             <Div>
             <h1>Restaurantes</h1>
             <img src={logo} alt="efood" />
-            <LinkCart>
-                <a href="#">0 - produto(s)</a>
+            <LinkCart onClick={openCart}>
+                <a href="#"> {items.length}- produto(s)</a>
             </LinkCart>
             </Div>
         </HeaderContainer>

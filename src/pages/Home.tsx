@@ -2,8 +2,11 @@ import React, { useEffect, useState } from 'react';
 import ProductLista from '../components/ProductList';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { useGetFeaturedGameQuery } from '../services/api';
+import { Dish } from './Profile';
 
 export type Restaurant = {
+  cardapio: Dish[];
   id: number;
   titulo: string;
   tipo: string;
@@ -14,13 +17,15 @@ export type Restaurant = {
 }
 
 const Home: React.FC = () => {
-  const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
+  const { data: restaurants = [], isLoading, error } = useGetFeaturedGameQuery();
 
-  useEffect(()=> {
-    fetch('https://fake-api-tau.vercel.app/api/efood/restaurantes')
-    .then(res=> res.json())
-    .then(res => setRestaurants(res))
-  }, [])
+  if (isLoading) {
+    return <p>Carregando...</p>;
+  }
+
+  if (error) {
+    return <p>Erro ao carregar dados.</p>;
+  }
 
   return (
     <>

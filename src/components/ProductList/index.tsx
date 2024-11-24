@@ -13,7 +13,7 @@ export const formataPreco = (preco = 0) => {
   }).format(preco)
 }
 
-const ProductList = ({ games }: Props) => {
+const ProductLista = ({ games }: Props) => {
   return (
     <Container>
       <div className="container">
@@ -35,4 +35,4 @@ const ProductList = ({ games }: Props) => {
   )
 }
 
-export default ProductList
+export default ProductLista
