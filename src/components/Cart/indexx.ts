@@ -34,7 +34,7 @@ export const CartContainer = styled.div`
 export const Sidebar = styled.aside`
   background-color: ${cores.cinza};
   z-index: 1;
-  padding: 40px 16px 0 16px;
+  padding: 30px 9px 0 ;
   max-width: 380px;
   width: 100%;
 

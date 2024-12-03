@@ -4,8 +4,8 @@ import { cores } from '../../styles/GlobalStyles'
 
 export const Container = styled.div`
   border-radius: 8px;
-  background-color: ${cores.cinza};
-  padding: 24px;
+  background-color: gray;
+  /* padding: 8px; */
   margin-bottom: 40px;
 
   h2,

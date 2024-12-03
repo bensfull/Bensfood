@@ -14,7 +14,7 @@ type TabButtonProps = {
 
 export const Row = styled.div<RowProps>`
   margin-top: ${(props) => props.marginTop || '0'};
-  display: flex;
+  display: block;
   column-gap: 24px;
   align-items: flex-end;
 `
@@ -27,6 +27,7 @@ export const ImputGroup = styled.div<InputGroupsProps>`
   label {
     font-size: 14px;
     margin-bottom: 8px;
+    margin-top: 8px;
     display: block;
   }
   input,
@@ -36,6 +37,10 @@ export const ImputGroup = styled.div<InputGroupsProps>`
     height: 32px;
     padding: 0 8px;
     width: 100%;
+
+    &.error{
+      border: 1px solid red;
+    }
   }
 `
 
@@ -44,7 +49,7 @@ export const TabButton = styled.button<TabButtonProps>`
   font-size: 14px;
   font-weight: bold;
   color: ${cores.branca};
-  background-color: ${(props) => (props.isActive ? cores.Azul : cores.preta)};
+  background-color: ${(props) => (props.isActive ? 'red' : 'black')};
   height: 32px;
   border: none;
   margin-right: 16px;

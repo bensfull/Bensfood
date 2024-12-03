@@ -92,10 +92,9 @@ const Header: React.FC = () => {
     <>
         <HeaderContainer>
             <div>
-            <h4>Restaurante</h4>
             </div>
             <Div>
-            <h1>Restaurantes</h1>
+            <h1 style={{color:'#1D2E5C'}}>Restaurantes</h1>
             <img src={logo} alt="efood" />
             <LinkCart onClick={openCart}>
                 <a href="#"> {items.length}- produto(s)</a>
