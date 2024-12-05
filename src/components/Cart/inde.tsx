@@ -51,11 +51,12 @@ const Cart = () => {
                 </CartItem>
               ))}
             </ul>
-            <Prices>
+            <Prices style={{paddingBottom: '20px'}}>
               <span className="texto">Valor Total</span>
               <span className="valor">{formataPreco(getTotalPrice())}</span>
             </Prices>
             <Button
+            
               title="Clique aqui para continuar com a compra"
               type="button"
               onClick={() => setShowCheckout(true)}  

@@ -3,7 +3,7 @@ import { cores } from "../../styles/GlobalStyles";
 // import { ButtonContainer } from "../Button/style";
 import { TagContainer } from "../Tag/style";
 
-import fechar from '../../assets/fechar.png'
+import fechar from '../../assets/lixeira.svg'
 
 
 export const Overlay = styled.div`
@@ -32,7 +32,7 @@ export const CartContainer = styled.div`
 `
 
 export const Sidebar = styled.aside`
-  background-color: ${cores.cinza};
+  background-color: #E66767;
   z-index: 1;
   padding: 30px 9px 0 ;
   max-width: 380px;
@@ -47,13 +47,13 @@ margin-top: 20px;
   justify-content: space-between;
   width: 100%; 
   .texto {
-    text-align: left; /* Alinha o texto à esquerda */
+    text-align: left; 
     color: ${cores.cinza_claro};
     font-size: 14px;
   }
   
   .valor {
-    text-align: right; /* Alinha o valor à direita */
+    text-align: right; 
     font-size: 12px;
     color: ${cores.branca};
   }
@@ -72,8 +72,8 @@ export const CartItem = styled.li`
   display: flex;
   position: relative;
   border-bottom: 1px solid ${cores.cinza_claro};
-  padding-bottom: 8px;
-  padding-top: 28px;
+  padding: 10px;
+  background-color: #FFEBD9;
 
   img{
     height: 80px;
@@ -83,14 +83,14 @@ export const CartItem = styled.li`
   }
 
   h3{
-    color: ${cores.branca};
+    color: ${cores.Azul};
     font-weight: bold;
     font-size:16px ;
   }
   span{
     padding-top: 14px;
     display: block;
-    color: ${cores.branca};
+    color: ${cores.Azul};
     font-weight: bold;
     font-size: 14px;
   }
@@ -103,12 +103,14 @@ export const CartItem = styled.li`
 
   button{
     background-image: url(${fechar});
+    cursor: pointer;
     width: 16px;
     height: 16px;
     border: none;
     background-color: transparent;
+    color: blue;
     position: absolute;
-    top: 14px;
-    right: 0;
+    bottom: 14px;
+    right: 5px;
   }
 `

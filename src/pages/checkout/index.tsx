@@ -41,6 +41,7 @@ const Checkout = ({ setShowCheckout, totalPrice }: { setShowCheckout: React.Disp
       expiresMonth: '',
       expiresYear: '',
       cardCode: '',
+      
     },
     validationSchema: Yup.object({
       receiver: Yup.string()
@@ -48,13 +49,13 @@ const Checkout = ({ setShowCheckout, totalPrice }: { setShowCheckout: React.Disp
         .required('O campo é obrigatório'),
       zipCode: Yup.string().required('O campo é obrigatório'),
       city: Yup.string().required('O campo é obrigatório'),
-      complement: Yup.string().required('O campo é obrigatório'),
       Endereco: Yup.string().required('O campo é obrigatório'),
       Cardname: Yup.string().required('O campo é obrigatório'),
       cardNumber: Yup.string().required('O campo é obrigatório'),
       expiresMonth: Yup.string().required('O campo é obrigatório'),
       expiresYear: Yup.string().required('O campo é obrigatório'),
       cardCode: Yup.string().required('O campo é obrigatório'),
+      numberADD: Yup.string().required('O campo é obrigatório'),
     }),
     onSubmit: (values) => {
       purchase({
@@ -243,7 +244,7 @@ const Checkout = ({ setShowCheckout, totalPrice }: { setShowCheckout: React.Disp
                     </ImputGroup>
               </div>
                   <ImputGroup>
-                    <label htmlFor="complement">complemento</label>
+                    <label htmlFor="complement">complemento(Opcional)</label>
                     <input
                       id="complement"
                       type="text"
@@ -251,14 +252,14 @@ const Checkout = ({ setShowCheckout, totalPrice }: { setShowCheckout: React.Disp
                       value={form.values.complement}
                       onChange={form.handleChange}
                       onBlur={form.handleBlur}
-                      className={checkInputHasError('complement') ? 'error' : ''}
+                      // className={checkInputHasError('complement') ? 'error' : ''}
                     />
                   </ImputGroup>
             </Row>
           </>
         </Card>
-        <Button type="button" title="voltar" onClick={handleBackToCart}>Voltar</Button>
-        <Button type="button" title='continuar com a compra' onClick={handleNextStep}>avancar</Button>
+        <Button type="button" title="voltar" onClick={handleBackToCart}>Voltar para o carrinho</Button>
+        <Button type="button" title='continuar com a compra' onClick={handleNextStep}>Continuar com o pagamento</Button>
 
       </form>
       )}
@@ -345,8 +346,8 @@ const Checkout = ({ setShowCheckout, totalPrice }: { setShowCheckout: React.Disp
           </div>
         </>
       </Card>
-      <Button type="button" title="voltar" onClick={handlePreviousStep}>Voltar o pagamento</Button>
-      <Button type="button" title='clique para finalizar com o pagamento' onClick={handleNextStep}>finalizar</Button>
+      <Button type="button" title='clique para finalizar com o pagamento' onClick={handleNextStep}>Finalizar pagamento</Button>
+      <Button type="button" title="voltar" onClick={handlePreviousStep}>Voltar para a edição de endereço</Button>
       </form>
       )}
 
@@ -369,7 +370,7 @@ const Checkout = ({ setShowCheckout, totalPrice }: { setShowCheckout: React.Disp
             Esperamos que desfrute de uma deliciosa e agradável 
             experiência gastronômica. Bom apetite!
            </p>
-         <Button type="button" title='clique para finalizar com o pagamento' onClick={handleConclude}>finalizar</Button>
+         <Button type="button" title='clique para finalizar com o pagamento' onClick={handleConclude}>Concluir</Button>
          </>
        </Card>
       )}

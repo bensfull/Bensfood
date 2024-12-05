@@ -4,9 +4,8 @@ import { cores } from '../../styles/GlobalStyles'
 
 export const Container = styled.div`
   border-radius: 8px;
-  background-color: gray;
-  /* padding: 8px; */
   margin-bottom: 40px;
+  padding-bottom: 20px;
 
   h2,
   h3 {

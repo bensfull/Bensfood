@@ -14,10 +14,10 @@ export const ButtonContainer = styled.button<Props>`
   font-weight: bold;
   padding: 2px 16px;
   border-radius: 8px;
-  margin-bottom: 30px;
-  margin-top: 30px;
+  margin-bottom: 10px;
+  /* margin-top: 30px; */
   text-align: center;
-  /* cursor: pointer; */
+  cursor: pointer;
   display: block;
   width: 100%;
 
