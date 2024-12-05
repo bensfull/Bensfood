@@ -37,35 +37,36 @@ const Cart = () => {
     <CartContainer className={isOpen ? 'is-open' : ''}>
       <Overlay onClick={closeCart} />
       <Sidebar>
-        {!showCheckout ? (  
+        {items.length === 0 ? ( 
+          <p style={{textAlign:'center'}}>O carrinho está vazio</p>
+        ) : !showCheckout ? (
           <>
             <ul>
               {items.map((item) => (
                 <CartItem key={item.id}>
-                  <img src={item.foto} alt="" />
+                  <img src={item.foto} alt={item.nome} />
                   <div>
                     <h3>{item.nome}</h3>
                     <span>{formataPreco(item.preco)}</span>
                   </div>
-                  <button onClick={() => removeItem(item.id)} type="button" />
+                  <button onClick={() => removeItem(item.id)} type="button"/>
                 </CartItem>
               ))}
             </ul>
-            <Prices style={{paddingBottom: '20px'}}>
+            <Prices style={{ paddingBottom: "20px" }}>
               <span className="texto">Valor Total</span>
               <span className="valor">{formataPreco(getTotalPrice())}</span>
             </Prices>
             <Button
-            
               title="Clique aqui para continuar com a compra"
               type="button"
-              onClick={() => setShowCheckout(true)}  
+              onClick={() => setShowCheckout(true)}
             >
               Continuar com a compra
             </Button>
           </>
         ) : (
-          <Checkout setShowCheckout={setShowCheckout} totalPrice={getTotalPrice()} /> 
+          <Checkout setShowCheckout={setShowCheckout} totalPrice={getTotalPrice()} />
         )}
       </Sidebar>
     </CartContainer>
