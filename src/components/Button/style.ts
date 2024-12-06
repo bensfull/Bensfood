@@ -7,7 +7,7 @@ import { Props } from '.'
 export const ButtonContainer = styled.button<Props>`
   border: 2px solid
     ${(props) => (props.variant === 'primary' ? cores.preta : cores.branca)};
-  color: black;
+  color: #E66767;
   background-color: ${(props) =>
     props.variant === 'primary' ? cores.preta : 'transparent'};
   font-size: 16px;
@@ -21,14 +21,12 @@ export const ButtonContainer = styled.button<Props>`
   display: block;
   width: 100%;
 
-  &:hover{
-    background-color: #cdcdcd;
-  }
+  background-color: #FFEBD9;
 `
 
 export const ButtonLink = styled(Link)`
-  border: 2px solid ${cores.branca};
-  color: ${cores.branca};
+  border: 2px solid #FFEBD9;
+  color: #E66767;
   background-color: transparent;
   font-size: 16px;
   font-weight: bold;

@@ -346,7 +346,7 @@ const Checkout = ({ setShowCheckout, totalPrice }: { setShowCheckout: React.Disp
           </div>
         </>
       </Card>
-      <Button type="button" title='clique para finalizar com o pagamento' onClick={handleNextStep}>Finalizar pagamento</Button>
+      <Button  type="button" title='clique para finalizar com o pagamento'  onClick={handleNextStep}>Finalizar pagamento</Button>
       <Button type="button" title="voltar" onClick={handlePreviousStep}>Voltar para a edição de endereço</Button>
       </form>
       )}
