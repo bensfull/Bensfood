@@ -3,9 +3,13 @@ import { cores } from '../../styles/GlobalStyles';
 import { Card } from '../Product/styles';
 
 export const Container = styled.section`
-  padding: 32px 0;
-  background-color: ${cores.preta};
-  padding: 0 15rem;
+    background-color: ${cores.preta};
+    width: 1024px;
+    margin: 0 auto; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+
 
   ${Card} {
     background-color: ${cores.preta};

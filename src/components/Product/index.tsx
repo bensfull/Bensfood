@@ -38,7 +38,7 @@ const Product: React.FC<Props> = ({
         <div className='diferen'>
           <div style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
             <Titulo>{titulo}</Titulo>
-          <span style={{color: 'black'}}> ⭐ {avaliacao.toFixed(1)}</span>
+          <span style={{color: 'black', fontSize:'18px'}}> ⭐ {avaliacao.toFixed(1)}</span>
           </div>
           
           <Descricao>{getDescricao(descricao)}</Descricao> 

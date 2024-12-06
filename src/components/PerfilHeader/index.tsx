@@ -6,7 +6,6 @@ import { Dish } from "../../pages/Profile";
 
 import image from '../../assets/fundo.svg'
 import logo from '../../assets/logo (1).svg'
-import banner from '../../assets/banner.svg'
 import { useDispatch, useSelector } from "react-redux";
 import { RootReducer } from "../store";
 
@@ -17,14 +16,17 @@ const HeaderContainer = styled.header`
   background-image:url(${image});
   width: 100%;
   height: 200px ;
-  text-align: center;
-  padding: 20px;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
 `;
 
 const Div = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  width: 1024px;
   align-items: center;
+  margin: 0 auto; 
 
   h1 {
     font-size: 18px;
@@ -49,15 +51,20 @@ const Subtitle = styled.p`
 `;
 
 const Banner = styled.div`  
-  background-image:url(${banner});
   width: 100%;
   height: 280px;
   text-align: center;
   padding: 20px 15rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
+  
+  ${Div}{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    > h3{
+      padding-bottom: 150px;
+    }
+  }
 `;
 
 
@@ -91,20 +98,21 @@ const Header: React.FC = () => {
   return (
     <>
         <HeaderContainer>
-            <div>
-            </div>
             <Div>
-            <h1 style={{color:'#1D2E5C'}}>Restaurantes</h1>
-            <img src={logo} alt="efood" />
-            <LinkCart onClick={openCart}>
-                <a href="#"> {items.length}- produto(s)</a>
-            </LinkCart>
+              <h1 style={{color:'#1D2E5C'}}>Restaurantes</h1>
+              <img src={logo} alt="efood" />
+              <LinkCart onClick={openCart}>
+                  <a href="#"> {items.length}- produto(s)</a>
+              </LinkCart>
             </Div>
-        </HeaderContainer>
+          </HeaderContainer>
 
-        <Banner>
+        <Banner style={{backgroundImage:`url(${restaurant?.capa})`}}>
+          <Div>
+            
             <h3 style={{fontSize:'32px', fontStyle: 'italic', fontWeight:'0'}}>{restaurant?.tipo}</h3>
             <h3 style={{fontSize:'32px'}}>{restaurant?.titulo}</h3>
+          </Div>
         </Banner>
     </>
     

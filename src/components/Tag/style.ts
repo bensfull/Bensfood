@@ -4,7 +4,7 @@ import { cores } from '../../styles/GlobalStyles'
 import { Props } from '.'
 
 export const TagContainer = styled.div<Props>`
-  background-color: ${cores.Azul};
+  background-color: #E66767;
   color: ${cores.branca};
   font-size: ${(props) => (props.size === 'big' ? '16px' : '12px')};
   font-weight: bold;

@@ -4,14 +4,17 @@ import { TagContainer } from '../Tag/style'
 import { Link } from 'react-router-dom'
 
 export const Card = styled.div`
-  background-color: ${cores.branca};
-  /* border-radius: 8px; */
+  background-color: #E66767;
   position: relative;
+  width: 320px;
+  padding: 8px;
+  background-repeat: no-repeat;
   
   img{
     display: block;
-    width: 100%;
-    height: 217px;
+    width: 304px;
+    height: 167px;
+    max-height: 217px;
     object-fit: cover;
   }
   
@@ -94,15 +97,18 @@ export const ModalContent = styled.div`
   z-index: 1;
   position: relative;
   max-width: 1024px;
-  height: 344px;
+  max-height: 344px;
   display: flex;
   gap: 15px;
-  padding: 20px;
+  align-items: center; 
+  justify-content: space-around;
   background-color: #c0392b;
+  padding: 20px;
 
   div {
     width: 656px;
     color: #fff;
+    
     h4 {
       font-size: 18px;
       font-weight: bold;
@@ -114,11 +120,6 @@ export const ModalContent = styled.div`
     }
   }
 
-  img {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-  }
 
   .fechar {
     position: absolute; 

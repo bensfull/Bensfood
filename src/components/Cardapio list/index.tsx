@@ -47,12 +47,12 @@ const Product: React.FC<Props> = ({
   return (
     <Card key={id}>
       <img src={foto} alt={nome || 'Product Image'} />
-      <div style={{ padding: '15px' }}>
+      <div >
         <Titulo>{nome}</Titulo>
         <Descricao>{getDescricao(descricao)}</Descricao>
         <button
           type="button"
-          style={{ padding: '10px', width: '100%' }}
+          style={{ width: '100%' , background:'#FFEBD9', border:'none', padding:'8px'}}
           onClick={openModal}
         >
           Adicionar ao carrinho
@@ -61,7 +61,7 @@ const Product: React.FC<Props> = ({
       {modalItem && (
         <Modal>
           <ModalContent>
-            <img src={modalItem.foto} alt={modalItem.nome} />
+            <img style={{width:'280px', height:'280px'}} src={modalItem.foto} alt={modalItem.nome} />
             <div>
               <img
                 className="fechar"

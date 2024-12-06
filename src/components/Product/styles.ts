@@ -4,7 +4,7 @@ import { TagContainer } from '../Tag/style'
 import { Link } from 'react-router-dom'
 
 export const Card = styled.div`
-  background-color: ${cores.branca};
+  background-color: white;
   /* border-radius: 8px; */
   position: relative;
   
@@ -21,13 +21,13 @@ export const Card = styled.div`
   
   
   .diferen{
-    border: 2px solid ${cores.cinza};
+    border: 2px solid #E66767;
     padding: 10px;
     
   }
 
   .button{
-    background-color: ${cores.Azul};
+    background-color: #E66767;
     padding: 5px;
     color: white;
     
