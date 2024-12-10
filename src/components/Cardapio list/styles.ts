@@ -12,8 +12,10 @@ export const Card = styled.div`
   
   img{
     display: block;
+    border-radius: 4px;
     width: 304px;
     height: 167px;
+    max-width: 100%;
     max-height: 217px;
     object-fit: cover;
   }
@@ -43,7 +45,7 @@ export const Titulo = styled.h3`
   display: block;
   margin-top: 16px;
   margin-bottom: 8px;
-  color:${cores.Azul} ;
+  color:white ;
   `
 
 export const Descricao = styled.p`
@@ -52,7 +54,7 @@ export const Descricao = styled.p`
   margin-bottom: 15px;
   display: block;
   margin-top: 16px;
-  color:${cores.Azul} ;
+  color:white;
 
 `
 export const Infos = styled.div`

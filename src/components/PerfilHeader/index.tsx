@@ -38,6 +38,9 @@ const LinkCart = styled.a`
   img {
     margin-left: 16px;
   }
+  a{
+    color: #E66767;
+  }
 `;
 
 const Title = styled.img`
@@ -55,12 +58,26 @@ const Banner = styled.div`
   height: 280px;
   text-align: center;
   padding: 20px 15rem;
+  color: #FFFFFF;
+  font-size: 32px;
+  position: relative;
+  z-index: 1;
+  .over{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.63);
+    /* z-index: 0; */
+  }
   
   ${Div}{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    
+    z-index: 19;
+
     > h3{
       padding-bottom: 150px;
     }
@@ -99,7 +116,7 @@ const Header: React.FC = () => {
     <>
         <HeaderContainer>
             <Div>
-              <h1 style={{color:'#1D2E5C'}}>Restaurantes</h1>
+              <h1 style={{color:'#E66767'}}>Restaurantes</h1>
               <img src={logo} alt="efood" />
               <LinkCart onClick={openCart}>
                   <a href="#"> {items.length}- produto(s)</a>
@@ -108,10 +125,10 @@ const Header: React.FC = () => {
           </HeaderContainer>
 
         <Banner style={{backgroundImage:`url(${restaurant?.capa})`}}>
+          <div className="over"></div>
           <Div>
-            
-            <h3 style={{fontSize:'32px', fontStyle: 'italic', fontWeight:'0'}}>{restaurant?.tipo}</h3>
-            <h3 style={{fontSize:'32px'}}>{restaurant?.titulo}</h3>
+            <h3 style={{fontSize:'32px', fontStyle: 'italic', fontWeight:'100', opacity:'.9'}}>{restaurant?.tipo}</h3>
+            <h3 style={{fontSize:'32px', zIndex:'1'}}>{restaurant?.titulo}</h3>
           </Div>
         </Banner>
     </>

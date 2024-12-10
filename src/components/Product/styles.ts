@@ -35,12 +35,12 @@ export const Card = styled.div`
 `
 
 export const Titulo = styled.h3`
-  font-weight: bold;
+  font-weight: 700;
   font-size: 16px;
   display: block;
   margin-top: 16px;
   margin-bottom: 8px;
-  color:${cores.Azul} ;
+  color:#E66767;
   `
 
 export const Descricao = styled.p`
@@ -49,7 +49,8 @@ export const Descricao = styled.p`
   margin-bottom: 15px;
   display: block;
   margin-top: 16px;
-  color:${cores.Azul} ;
+  color:#E66767 ;
+  font-weight: 400;
 
 `
 export const Infos = styled.div`
