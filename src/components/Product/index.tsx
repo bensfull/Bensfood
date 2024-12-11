@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Tag } from '../Tag'
 import { Card, Descricao, Titulo, Infos } from './styles'
+import estrela from '../../assets/estrela.png'
 
 type Props = {
   id: number;
@@ -38,7 +39,7 @@ const Product: React.FC<Props> = ({
         <div className='diferen'>
           <div style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
             <Titulo>{titulo}</Titulo>
-          <span style={{color: '#E66767', fontSize:'18px', fontWeight:'bold'}}> ⭐ {avaliacao.toFixed(1)}</span>
+          <div style={{color: '#E66767', fontSize:'18px', fontWeight:'bold',display:'flex', alignItems:'center'}}>{avaliacao.toFixed(1)} <img style={{width:'21px', height:'20px', marginLeft:'5px' }} src={estrela} alt="estrela" /></div>
           </div>
           
           <Descricao>{getDescricao(descricao)}</Descricao> 

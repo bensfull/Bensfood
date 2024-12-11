@@ -22,8 +22,7 @@ export const Card = styled.div`
   
   .diferen{
     border: 2px solid #E66767;
-    padding: 10px;
-    
+    padding: 10px;    
   }
 
   .button{
