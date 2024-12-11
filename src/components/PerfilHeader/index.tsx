@@ -61,7 +61,6 @@ const Banner = styled.div`
   color: #FFFFFF;
   font-size: 32px;
   position: relative;
-  z-index: 1;
   .over{
     position: absolute;
     top: 0;
@@ -69,14 +68,12 @@ const Banner = styled.div`
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.63);
-    /* z-index: 0; */
   }
   
   ${Div}{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    z-index: 19;
 
     > h3{
       padding-bottom: 150px;
