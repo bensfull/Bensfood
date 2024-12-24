@@ -116,7 +116,7 @@ const Header: React.FC = () => {
               <h1 style={{color:'#E66767'}}>Restaurantes</h1>
               <img src={logo} alt="efood" />
               <LinkCart onClick={openCart}>
-                  <a href="#"> {items.length}- produto(s)</a>
+                  <a style={{fontWeight:'900', fontSize:'18px'}} href="#"> {items.length} produto(s) no carrinho</a>
               </LinkCart>
             </Div>
           </HeaderContainer>
